@@ -1,0 +1,16 @@
+<h1><%= @employee.name %></h1>
+
+<p>
+  <img src="<%= @employee.img_url %>" width="200"/>
+</p>
+
+<p>
+  <strong>Alias: </strong><%= @employee.alias %><br />
+  <strong>Title: </strong><%= @employee.title %><br />
+  <strong>Office: </strong><%= @employee.office %><br />
+  <strong>Dog: </strong><%= @employee.dog.name %>
+</p>
+
+<p>
+  <%= link_to 'Edit', edit_employee_path(@employee) %>
+</p>
