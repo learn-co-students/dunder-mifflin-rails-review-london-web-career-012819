@@ -1,0 +1,8 @@
+<h1>Unadopted</h1>
+<% @dogs.each do |dog| %>
+  <ul>
+  <% if dog.owner_count == 0 %>
+    <li><%= link_to dog.name, edit_dog_path(dog) %></li>
+  <% end %>
+  </ul>
+<% end %>

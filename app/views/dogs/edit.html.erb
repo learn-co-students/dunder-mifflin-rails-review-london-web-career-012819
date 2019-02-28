@@ -1,0 +1,13 @@
+<h1>Update Dog</h1>
+
+<%= form_for(@dog) do |f| %>
+<%= f.label :name %><br />
+<%= f.text_field :name %>
+
+<h2>Owners</h2>
+<% Employee.all.each do |e| %>
+  <input type="checkbox" name="dog[employees_ids][]" value="<%= e.id %>"<% if e.dog_id == @dog.id %>checked="checked"<% end %>><%= e.name %><br />
+<% end %>
+
+<%= f.submit %>
+<% end %>

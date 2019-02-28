@@ -1,6 +1,11 @@
 
 class DogsController < ApplicationController
+
   def index
+    @dogs = Dog.all
+  end
+
+  def unadopted
     @dogs = Dog.all
   end
 
@@ -13,14 +18,16 @@ class DogsController < ApplicationController
   end
 
   def update
+
     @dog = Dog.find(params[:id])
     @dog.update(dog_params)
+
     redirect_to dog_path(@dog)
   end
 
   private
 
   def dog_params
-    params.require(:dog).permit(:name, employees: [])
+    params.require(:dog).permit(:name, employees_ids: [])
   end
 end
