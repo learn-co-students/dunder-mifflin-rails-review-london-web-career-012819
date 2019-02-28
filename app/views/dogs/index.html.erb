@@ -1,0 +1,8 @@
+<h1>Welcome!</h1>
+<h2>These are the Dunder Mifflin Pets</h2>
+Please follow the links to learn more about your favourite pet!
+<br/><br/>
+
+<% @dogs.each do |dog| %>
+Pet Name: <%= link_to dog.name, dog_path(dog) %><br/><br/>
+<% end %>
