@@ -1,0 +1,8 @@
+<h1>Adopt Me!</h1>
+
+
+<%= form_for @adoptable do |f| %>
+<%= f.collection_select :employee_ids, Employee.all, :id, :first_name %>
+<%= f.submit %>
+
+<% end %>

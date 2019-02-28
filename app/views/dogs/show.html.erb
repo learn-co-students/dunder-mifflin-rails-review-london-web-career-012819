@@ -1,0 +1,19 @@
+<h1><%= @dog.name %></h1>
+
+<h3>Breed: <%= @dog.breed %></h3>
+<h3>Age: <%= @dog.age %></h3>
+
+<% i = 1 %>
+<% @dog.employees.each do |employee| %>
+Owner <%= i %>: <%= employee.first_name %>
+<%= employee.last_name %>
+<% i += 1 %>
+<br/>
+<br/>
+
+<% end %>
+
+
+<% if @dog.employees.length == 0 %>
+<%= link_to @dog.name, edit_dog_path(@dog) %>
+<% end %>
